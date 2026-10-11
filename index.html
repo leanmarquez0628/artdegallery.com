@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lean Marquez | Drawing &amp; Art Gallery</title>
+  <meta name="description"
+    content="Hand-drawn anime fan art, pencil portraits, ink drawings and architectural plans." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Unique background: pencil doodles + a line trail that follows your cursor -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- ============ NAVIGATION (floating pill) ============ -->
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Main">
+      <a href="#home" class="logo">LM<span>.</span></a>
+      <button class="burger" id="burger" aria-label="Open menu"
+        aria-expanded="false"><span></span><span></span></button>
+      <ul class="links" id="links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Art Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme" id="theme" aria-label="Toggle dark mode" title="Light / Dark">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+        </svg>
+      </button>
+      <a href="#contact" class="btn btn-small">Commission me</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ 1. HOME ============ -->
+    <section id="home" class="hero">
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>DRAW • SKETCH • COLOR • CREATE • VISUAL •</span>
+          <span>DRAW • SKETCH • COLOR • CREATE • VISUAL •</span>
+          <span>DRAW • SKETCH • COLOR • CREATE • VISUAL •</span>
+        </div>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-text reveal">
+          <p class="eyebrow">Art Artist &middot; Illustrator &middot; Digital Artist &middot; Metro Manila, PH</p>
+          <h1>I draw<br />what I <em>imagine.</em></h1>
+          <p class="lead">Anime fan art in markers and colored pencil, and pencil portraits that look back at you.
+            Welcome to my sketchbook.</p>
+          <div class="cta">
+            <a href="#gallery" class="btn">See my artwork</a>
+            <a href="#contact" class="btn btn-ghost">Work with me</a>
+          </div>
+          <div class="layout-switch" role="group" aria-label="Picture layout">
+            <span>Layout</span>
+            <button type="button" class="on" data-l="a" aria-pressed="true">1</button>
+            <button type="button" data-l="b" aria-pressed="false">2</button>
+          </div>
+        </div>
+        <div class="hero-art reveal" id="heroArt" data-layout="a" aria-hidden="true">
+          <div class="layout-a">
+            <div class="frame f1"><img data-art="hero-1" alt="" /></div>
+            <div class="frame f2"><img data-art="hero-2" alt="" /></div>
+            <div class="frame f3"><img data-art="hero-3" alt="" /></div>
+            <div class="sticker">Hand<br />drawn</div>
+          </div>
+          <div class="layout-b">
+            <div class="tile t1"><img data-art="hero-2" alt="" /></div>
+            <div class="tile t2"><img data-art="hero-1" alt="" /></div>
+            <div class="tile t3"><img data-art="hero-4" alt="" /></div>
+            <div class="tile t4"><img data-art="hero-3" alt="" /></div>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">scroll ↓</a>
+    </section>
+
+    <!-- ============ 2. ABOUT ME IN DRAWING ============ -->
+    <section id="about" class="section">
+      <div class="container">
+        <p class="eyebrow">01 — About me</p>
+        <h2 data-typed="About me, in drawing."></h2>
+        <div class="about-grid">
+          <div class="about-photo reveal">
+            <div class="polaroid" id="aboutSlider" role="group" aria-roledescription="carousel"
+              aria-label="My drawings">
+              <div class="ph-viewport">
+                <div class="ph-track" id="aboutTrack"></div>
+                <button class="ph-arrow prev" id="aPrev" aria-label="Previous drawing">‹</button>
+                <button class="ph-arrow next" id="aNext" aria-label="Next drawing">›</button>
+              </div>
+              <div class="ph-dots" id="aboutDots"></div>
+              <span id="aboutCap" aria-live="polite">my favorite piece ✎</span>
+            </div>
+          </div>
+          <div class="about-text reveal">
+            <p>Hi, I'm <strong>Lean Miguel Marquez</strong>. For me, drawing is an act of storytelling. What begins as a
+              few quiet pencil lines on paper gradually comes alive as a character, a face, or a narrative.</p>
+            <p>My creative practice spans traditional illustration. I enjoy creating vibrant <strong>anime
+              fan art</strong> with markers and colored pencils, as well as executing patient <strong>graphite portraits</strong> driven by subtle
+              shading. Complementing my character work, I produce <strong>ink illustrations</strong>, <strong>expressive doodles</strong>, and
+              <strong>architectural design and planning</strong>.</p>
+            <div class="chips">
+              <span>Anime fan art</span><span>Markers</span><span>Colored pencil</span><span>Graphite
+                portraits</span><span>Doodle art</span><span>Ink drawing</span><span>Architectural plans</span>
+            </div>
+            <div class="stats">
+              <div><b data-count="5">0</b><small>main styles</small></div>
+              <div><b data-count="4">0</b><small>mediums</small></div>
+              <div><b data-count="24">0</b><small>works shown</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. SERVICES IN DRAWING ============ -->
+    <section id="services" class="section band">
+      <div class="container">
+        <p class="eyebrow">02 — Services</p>
+        <h2 data-typed="What I can draw for you."></h2>
+        <div class="cards">
+          <article class="card reveal">
+            <span class="num">01</span>
+            <h3>Pencil Portrait</h3>
+            <p>A hand-drawn graphite portrait of you or a loved one—the perfect, thoughtful gift for any occasion.</p>
+            <p class="price">Coming Soon</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">02</span>
+            <h3>Anime Fan Art</h3>
+            <p>Your favorite anime character brought to life in vibrant markers and colored pencils.</p>
+            <p class="price">Starting from ₱1250.00 plus Shipping</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">03</span>
+            <h3>Doodle Art</h3>
+            <p>A delight-filled collection of playful doodles: expression-packed characters, intricate patterns, and
+              whimsical everyday scenes.
+            </p>
+            <p class="price">Starting from ₱900.00 plus Shipping</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">04</span>
+            <h3>Fan Art</h3>
+            <p>Get your favorite characters from games, movies, shows, or bands custom-drawn as a special gift or
+              personal keepsake.</p>
+            <p class="price">Starting from ₱1250.00 plus Shipping</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">05</span>
+            <h3>Ink Drawing</h3>
+            <p>Dynamic ink artwork defined by razor-sharp line-work, high-contrast shadows, and painstaking
+              cross-hatching.</p>
+            <p class="price">Starting from ₱1,250.00 plus Shipping</p>
+          </article>
+          <article class="card reveal">
+            <span class="num">06</span>
+            <h3>Architectural Plan Drawing</h3>
+            <p>Neat floor plans, elevations and sections, drawn to scale for house ideas and school plates.</p>
+            <p class="price">Coming Soon</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. ART GALLERY (work gallery, slides of 6) ============ -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <p class="eyebrow">03 — Art Gallery</p>
+        <h2 data-typed="My work gallery."></h2>
+        <div class="tabs" id="galleryTabs" role="tablist">
+          <button class="tab active" data-filter="all" role="tab">All</button>
+          <button class="tab" data-filter="anime" role="tab">Anime fan art</button>
+          <button class="tab" data-filter="portrait" role="tab">Pencil portraits</button>
+        </div>
+        <div class="gallery-slide" id="galleryGrid" aria-live="polite"></div>
+        <div class="pager">
+          <button class="arrow" id="gPrev" aria-label="Previous slide">←</button>
+          <span id="gCount">Slide 1 / 1</span>
+          <button class="arrow" id="gNext" aria-label="Next slide">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Big visual divider like the template's "Showreel" -->
+    <section class="showreel" aria-label="Sketchbook">
+      <div class="showreel-box">
+        <div class="strip" id="sketchStrip"></div>
+        <span class="sk-title">Sketchbook</span>
+      </div>
+    </section>
+
+    <!-- ============ 5. CONTACT ============ -->
+    <section id="contact" class="section contact">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="eyebrow light">04 — Contact</p>
+          <h2 class="giant">Let's<br />work<br />together</h2>
+          <p class="lead">Want a portrait, an ink drawing or a floor plan? Reach me with the details here.</p>
+        </div>
+        <div class="reveal">
+          <ul class="contact-list">
+            <li><small>Email</small><a href="mailto:leanmarquez0628@yahoo.com">leanmarquez0628@yahoo.com</a></li>
+            <li><small class="lbl"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none" />
+                </svg> Instagram</small><a href="https://www.instagram.com/lnmglmrqz/" target="_blank"
+                rel="noopener">@lnmglmrqz</a></li>
+            <li><small class="lbl"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"
+                  aria-hidden="true">
+                  <path
+                    d="M16.6 2h-3.1v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .8.1V9.2a6 6 0 0 0-.8-.1 6 6 0 1 0 6 6V8.6a7.600 7.600 0 0 0 4.400 1.400V6.900a4.500 4.500 0 0 1-4.400-4.900z" />
+                </svg> TikTok</small><a href="https://www.tiktok.com/@lnmglmrq" target="_blank"
+                rel="noopener">@lnmglmrq</a></li>
+            <li><small class="lbl"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"
+                  aria-hidden="true">
+                  <path
+                    d="M13.5 22v-8.2h2.8l.5-3.4h-3.3V8.300c0-1 .4-1.700 1.800-1.700h1.700V3.600c-.3 0-1.300-.2-2.500-.2-2.500 0-4.200 1.500-4.200 4.300v2.700H7.100v3.400h2.800V22h3.600z" />
+                </svg> Facebook</small><a href="https://www.facebook.com/Deadpool.Marquez.23" target="_blank"
+                rel="noopener">Lean Miguel Marquez</a></li>
+            <li><small class="lbl"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 21l1.600-4.700A9 9 0 1 1 8 19.600z" />
+                  <path
+                    d="M9.2 8.2c.3-.6.7-.6 1-.1l.6 1.100c.2.4.1.7-.2 1l-.4.4c.6 1.200 1.500 2.100 2.700 2.700l.4-.5c.3-.3.6-.3 1-.1l1.100.6c.5.3.5.7.1 1.100-.7.8-1.600 1-2.700.5-2.400-1-4-2.600-4.900-4.900-.3-.8-.1-1.500.5-1.800z"
+                    fill="currentColor" stroke="none" />
+                </svg> WhatsApp</small><a href="https://wa.me/639213584345" target="_blank" rel="noopener">+63
+                9213584345</a></li>
+            <li><small class="lbl"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6l-4 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
+                  <path
+                    d="M9.2 6.700c.3-.6.7-.6 1-.1l.6 1.100c.2.4.1.7-.2 1l-.4.4c.6 1.200 1.500 2.100 2.700 2.700l.4-.5c.3-.3.6-.3 1-.1l1.100.6c.5.3.5.7.1 1.100-.7.8-1.600 1-2.700.5-2.400-1-4-2.600-4.900-4.900-.3-.8-.1-1.500.5-1.800z"
+                    fill="currentColor" transform="translate(0 -1.500)" stroke="none" />
+                </svg> Viber</small><a href="viber://chat?number=%2B639213584345" target="_blank" rel="noopener">+63
+                9213584345</a></li>
+            <li><small>Location</small><span>Metro Manila, Philippines</span></li>
+          </ul>
+          <div class="follow">
+            <p class="follow-title">Follow my social media <span>(Instagram, TikTok, Facebook and Threads)</span></p>
+            <div class="follow-btns">
+              <a class="social" href="https://www.instagram.com/lnmglmrqz/" target="_blank" rel="noopener"
+                aria-label="Instagram"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none" />
+                </svg></a>
+              <a class="social" href="https://www.tiktok.com/@lnmglmrq" target="_blank" rel="noopener"
+                aria-label="TikTok"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"
+                  aria-hidden="true">
+                  <path
+                    d="M16.6 2h-3.1v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .8.1V9.2a6 6 0 0 0-.8-.1 6 6 0 1 0 6 6V8.6a7.600 7.600 0 0 0 4.400 1.400V6.900a4.500 4.500 0 0 1-4.400-4.900z" />
+                </svg></a>
+              <a class="social" href="https://www.facebook.com/Deadpool.Marquez.23" target="_blank" rel="noopener"
+                aria-label="Facebook"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"
+                  aria-hidden="true">
+                  <path
+                    d="M13.5 22v-8.2h2.8l.5-3.4h-3.3V8.300c0-1 .4-1.700 1.800-1.700h1.700V3.600c-.3 0-1.300-.2-2.500-.2-2.500 0-4.200 1.500-4.200 4.300v2.700H7.100v3.400h2.800V22h3.600z" />
+                </svg></a>
+              <a class="social" href="https://www.threads.com/@lnmglmrqz" target="_blank" rel="noopener"
+                aria-label="Threads"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                  stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path
+                    d="M17.700 8.600C16.900 5.300 14.700 3.500 12 3.500c-4 0-6.800 3-6.800 8.500s2.800 8.500 6.800 8.500c3.300 0 5.800-1.900 5.800-4.600 0-2.500-2.200-3.800-4.900-3.800-1.900 0-3.200 1-3.200 2.400 0 1.300 1.100 2.200 2.700 2.200 2.200 0 3.400-1.700 3.400-5" />
+                </svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> 2026 Lean Miguel Marquez My Random Drawing</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <dialog id="lightbox" class="lightbox">
+    <button class="close" id="lbClose" aria-label="Close">×</button>
+    <img id="lbImg" alt="" />
+    <p id="lbCap"></p>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
