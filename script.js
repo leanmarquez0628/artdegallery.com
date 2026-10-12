@@ -1,5 +1,5 @@
 /* =========================================================
-   Lean Miguel Marquez – Art Gallery
+   Lean Marquez – Art Gallery
    Sections: 1) data  2) helpers  3) theme + nav  4) typed headings
              5) gallery  6) footer year  7) background
    ========================================================= */
@@ -15,25 +15,25 @@ const ARTWORKS = [
   {
     cat: "anime",
     src: "images/art-03.jpg",
-    title: "RoronoaZoro, One Piece",
+    title: "Roronoa Zoro, One Piece",
     pos: "50% 32%",
   },
   {
     cat: "anime",
     src: "images/art-04.jpg",
-    title: "Bruno Bucciarati, JoJo Bizzare Adventure",
+    title: "Bruno Bucciarati, JoJo's Bizarre Adventure",
     pos: "42% 30%",
   },
   {
     cat: "portrait",
     src: "images/art-02.jpg",
-    title: "Portrait sketches",
+    title: "Portrait No. 1",
     pos: "50% 40%",
   },
   {
     cat: "portrait",
     src: "images/art-05.jpg",
-    title: "Pencil portrait",
+    title: "Portrait No. 2",
     pos: "35% 38%",
   },
   {
@@ -45,38 +45,38 @@ const ARTWORKS = [
   {
     cat: "anime",
     src: "images/art-06.jpg",
-    title: "Madara Uchiha, Naruto Shippuden",
+    title: "Madara Uchiha, Naruto",
     pos: "50% 28%",
   },
   {
     cat: "anime",
     src: "images/art-01.jpg",
-    title: "JoJo Bizzare Adventure Characters",
+    title: "JoJo Bizzare Adventure, Joestar Family",
     pos: "45% 40%",
   },
   {
     cat: "portrait",
     src: "images/art-12.jpg",
-    title: "Fan art",
+    title: "Portrait No. 3",
     pos: "50% 25%",
   },
   {
     cat: "portrait",
     src: "images/art-16.jpg",
-    title: "Sketchbook spread",
+    title: "Portrait No. 4",
     pos: "50% 55%",
   },
   // slide 2
   {
     cat: "anime",
     src: "images/art-11.jpg",
-    title: "Jotaro Kujo, JoJo Bizzare Adventure",
+    title: "Jotaro Kujo, JoJo's Bizarre Adventure",
     pos: "50% 30%",
   },
   {
     cat: "portrait",
     src: "images/art-17.jpg",
-    title: "Sketch",
+    title: "Portrait No. 5",
     pos: "45% 30%",
   },
   {
@@ -88,7 +88,7 @@ const ARTWORKS = [
   {
     cat: "portrait",
     src: "images/art-14.jpg",
-    title: "Pencil portrait",
+    title: "Portrait No. 6",
     pos: "50% 40%",
   },
   {
@@ -100,7 +100,7 @@ const ARTWORKS = [
   {
     cat: "portrait",
     src: "images/art-07.jpg",
-    title: "Sketchbook spread",
+    title: "Portrait No. 7",
     pos: "50% 55%",
   },
   {
@@ -112,25 +112,25 @@ const ARTWORKS = [
   {
     cat: "portrait",
     src: "images/art-09.jpg",
-    title: "Sketch portraits",
+    title: "Portrait No. 8",
     pos: "50% 30%",
   },
   {
     cat: "portrait",
     src: "images/art-18.jpg",
-    title: "Food sketchbook",
+    title: "Portrait No. 9",
     pos: "50% 45%",
   },
   {
     cat: "anime",
     src: "images/art-22.jpg",
-    title: "Nezuko, Demon Slayer",
+    title: "Nezuko Kamado, Demon Slayer",
     pos: "50% 38%",
   },
   {
     cat: "portrait",
     src: "images/art-19.jpg",
-    title: "Portraits with glasses",
+    title: "Portrait No. 10",
     pos: "50% 38%",
   },
   {
@@ -142,7 +142,7 @@ const ARTWORKS = [
   {
     cat: "portrait",
     src: "images/art-21.jpg",
-    title: "Random sketch",
+    title: "Portrait No. 11",
     pos: "50% 22%",
   },
   {
@@ -154,7 +154,7 @@ const ARTWORKS = [
   {
     cat: "portrait",
     src: "images/art-20.jpg",
-    title: "Random Sketch",
+    title: "Portrait No. 12",
     pos: "50% 35%",
   },
 ];
@@ -318,7 +318,7 @@ $$("[data-typed]").forEach((el) => {
   typeObserver.observe(el);
 });
 
-/* ---------- 5) GALLERY (slides of 6) ---------- */
+/* ---------- 5) GALLERY (slides of 9) ---------- */
 // Hero + about images
 $$("img[data-art]").forEach((img, i) => {
   const key = img.dataset.art;
@@ -436,14 +436,14 @@ lb.addEventListener("click", (e) => {
 const SKETCHBOOK = [
   { cat: "anime", src: "images/sketch-1.jpg", title: "Sanji Vinsmoke, One Piece" },
   { cat: "portrait", src: "images/sketch-2.jpg", title: "Portrait sketches" },
-  { cat: "anime", src: "images/sketch-3.jpg", title: "Jotaro Kujo, JoJo Bizzare Adventure" },
+  { cat: "anime", src: "images/sketch-3.jpg", title: "Jotaro Kujo, JoJo's Bizarre Adventure" },
   {
     cat: "portrait",
     src: "images/sketch-4.jpg",
     title: "Pencil portrait study",
   },
   { cat: "portrait", src: "images/sketch-5.jpg", title: "Pencil portrait" },
-  { cat: "anime", src: "images/sketch-6.jpg", title: "Zenitsu, Demon Slayer" },
+  { cat: "anime", src: "images/sketch-6.jpg", title: "Zenitsu Agatsuma, Demon Slayer" },
   {
     cat: "anime",
     src: "images/sketch-7.jpg",
@@ -489,17 +489,17 @@ const ABOUT_SLIDES = [
   },
   {
     src: "images/about-1.jpg",
-    cap: "Sanji Vinsmoke · One Piece",
+    cap: "Sanji Vinsmoke· markers & colored pencil",
     pos: "50% 35%",
   },
   {
     src: "images/about-2.jpg",
-    cap: "Sketch portraits · graphite",
+    cap: "Portrait No 1 · Graphite Pencil",
     pos: "50% 50%",
   },
   {
     src: "images/about-3.jpg",
-    cap: "Sketch portraits · graphite",
+    cap: "Portrait No 5 · Graphite Pencil",
     pos: "50% 40%",
   },
 ];

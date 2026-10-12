@@ -321,9 +321,30 @@ h2[data-typed].done::after {
   position: relative;
 }
 .hero h1 {
-  font-size: clamp(3rem, 8.5vw, 6.6rem);
+  font-weight: 900;
+  font-size: clamp(1.9rem, 4.1vw, 3.4rem);
   color: var(--red);
-  margin-bottom: 26px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.04;
+  text-shadow: 3px 3px 0 rgba(0, 26, 77, 0.18);
+}
+.hero .role {
+  font: 700 1rem var(--body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+.hero .role::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 3px;
+  background: var(--yellow);
+  vertical-align: middle;
+  margin-right: 12px;
 }
 .hero h1 em {
   font-style: normal;
@@ -345,7 +366,7 @@ h2[data-typed].done::after {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 10px;
+  gap: 16px;
   opacity: 0;
   visibility: hidden;
   transform: scale(0.96);
@@ -406,9 +427,17 @@ h2[data-typed].done::after {
 }
 .tile {
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 18px;
   background: var(--bg-2);
-  box-shadow: 0 6px 18px rgba(0, 26, 77, 0.28);
+  box-shadow:
+    8px 8px 0 var(--red),
+    16px 16px 0 var(--yellow);
+}
+.t2,
+.t4 {
+  box-shadow:
+    8px 8px 0 var(--yellow),
+    16px 16px 0 var(--red);
 }
 .tile img {
   width: 100%;
@@ -447,11 +476,17 @@ h2[data-typed].done::after {
 .frame {
   position: absolute;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 18px;
   background: var(--bg-2);
-  outline: 4px solid var(--bg);
-  box-shadow: 0 6px 18px rgba(0, 26, 77, 0.28);
+  box-shadow:
+    10px 10px 0 var(--red),
+    20px 20px 0 var(--yellow);
   transition: transform 0.4s;
+}
+.f3 {
+  box-shadow:
+    10px 10px 0 var(--yellow),
+    20px 20px 0 var(--red);
 }
 .frame img {
   width: 100%;
@@ -736,7 +771,7 @@ h2[data-typed].done::after {
 /* ===== Services ===== */
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 .card {
@@ -1037,6 +1072,7 @@ h2[data-typed].done::after {
   overflow: hidden;
   position: relative;
   background: var(--bg-2);
+  outline: 4px solid #fff;
   box-shadow: 0 6px 16px rgba(0, 26, 77, 0.35);
   cursor: zoom-in;
   padding: 0;
