@@ -157,6 +157,49 @@ const ARTWORKS = [
     title: "Portrait No. 12",
     pos: "50% 35%",
   },
+  // ink drawings
+  {
+    cat: "ink",
+    src: "images/art-25.jpg",
+    title: "Townhouse No. 1",
+    pos: "50% 40%",
+  },
+  {
+    cat: "ink",
+    src: "images/art-26.jpg",
+    title: "Old House concept",
+    pos: "50% 50%",
+  },
+  {
+    cat: "ink",
+    src: "images/art-27.jpg",
+    title: "Store",
+    pos: "50% 45%",
+  },
+  {
+    cat: "ink",
+    src: "images/art-28.jpg",
+    title: "Samurai Warrior",
+    pos: "60% 45%",
+  },
+  {
+    cat: "ink",
+    src: "images/art-29.jpg",
+    title: "Street Scene with Setting Sun",
+    pos: "40% 45%",
+  },
+  {
+    cat: "ink",
+    src: "images/art-30.jpg",
+    title: "Lighthouse",
+    pos: "50% 40%",
+  },
+  {
+    cat: "ink",
+    src: "images/art-31.jpg",
+    title: "Townhouse No. 2",
+    pos: "50% 45%",
+  },
 ];
 const PER_SLIDE = 9; // pictures per slide (matches the 9-tile museum grid)
 
@@ -369,7 +412,12 @@ function makeArt(a, seed, delay, focusable) {
   img.src = a.src;
   const cap = document.createElement("figcaption");
   const kind = document.createElement("small");
-  kind.textContent = a.cat === "anime" ? "Anime fan art" : "Pencil portrait";
+  kind.textContent =
+    a.cat === "anime"
+      ? "Anime fan art"
+      : a.cat === "ink"
+        ? "Ink drawing"
+        : "Pencil portrait";
   const name = document.createElement("b");
   name.textContent = a.title;
   cap.append(kind, name);
@@ -434,22 +482,38 @@ lb.addEventListener("click", (e) => {
 
 // Sketchbook strip (the sliding pictures in the yellow band)
 const SKETCHBOOK = [
-  { cat: "anime", src: "images/sketch-1.jpg", title: "Sanji Vinsmoke, One Piece" },
+  {
+    cat: "anime",
+    src: "images/sketch-1.jpg",
+    title: "Sanji Vinsmoke, One Piece",
+  },
   { cat: "portrait", src: "images/sketch-2.jpg", title: "Portrait sketches" },
-  { cat: "anime", src: "images/sketch-3.jpg", title: "Jotaro Kujo, JoJo's Bizarre Adventure" },
+  {
+    cat: "anime",
+    src: "images/sketch-3.jpg",
+    title: "Jotaro Kujo, JoJo's Bizarre Adventure",
+  },
   {
     cat: "portrait",
     src: "images/sketch-4.jpg",
     title: "Pencil portrait study",
   },
   { cat: "portrait", src: "images/sketch-5.jpg", title: "Pencil portrait" },
-  { cat: "anime", src: "images/sketch-6.jpg", title: "Zenitsu Agatsuma, Demon Slayer" },
+  {
+    cat: "anime",
+    src: "images/sketch-6.jpg",
+    title: "Zenitsu Agatsuma, Demon Slayer",
+  },
   {
     cat: "anime",
     src: "images/sketch-7.jpg",
     title: "Kazutora Hanemiya, Tokyo Revengers",
   },
-  { cat: "anime", src: "images/sketch-8.jpg", title: "Yoh Asakura, Shaman King" },
+  {
+    cat: "anime",
+    src: "images/sketch-8.jpg",
+    title: "Yoh Asakura, Shaman King",
+  },
 ];
 const strip = $("#sketchStrip");
 if (strip) {
@@ -582,8 +646,8 @@ let W,
 function bgColors() {
   const dark = root.dataset.theme === "dark";
   colors = dark
-    ? ["#5b8dff", "#ffd100", "#f4f7ff", "#7fb0ff"]
-    : ["#003594", "#e6a800", "#001a4d", "#ffa300"];
+    ? ["#f9a66c", "#ffc94b", "#f9faf4", "#f17a7e"]
+    : ["#4a6163", "#ffc94b", "#f9a66c", "#f17a7e"];
 }
 bgColors();
 
